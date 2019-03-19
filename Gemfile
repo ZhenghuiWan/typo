@@ -19,7 +19,9 @@ dbfile = File.expand_path("../config/database.yml", __FILE__)
 #  end
 #end
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
 
 source 'https://rubygems.org'
 ruby "1.9.3"
@@ -37,11 +39,12 @@ gem 'addressable', '~> 2.1', :require => 'addressable/uri'
 gem 'mini_magick', '~> 1.3.3', :require => 'mini_magick'
 gem 'uuidtools', '~> 2.1.1'
 gem 'flickraw-cached'
+gem 'flickraw', '0.9.6'
 gem 'rubypants', '~> 0.2.0'
 gem 'rake', '~> 0.9.2'
 gem 'acts_as_list'
 gem 'acts_as_tree_rails3'
-gem 'recaptcha'
+gem 'recaptcha', :require => 'recaptcha/rails'
 
 group :development, :test do
   gem 'ruby-debug19'
